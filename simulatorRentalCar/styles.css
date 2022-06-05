@@ -1,0 +1,40 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titlePrincipal {
+    background-color: rgb(242, 255, 127);
+    width: 25%;
+    text-align: center;
+}
+
+#containerData {
+    text-align: center;
+}
+
+#carNew {
+    background-color: dodgerblue;
+    color: aliceblue;
+    width: 50%;
+    padding: 1%;
+    margin: 2%;
+}
+
+#carList {
+    background-color: rgb(53, 196, 141);
+    color: aliceblue;
+    width: 50%;
+    padding: 1%;
+    margin: 2%;
+}
+
+#carFind {
+    background-color: rgb(204, 128, 97);
+    color: aliceblue;
+    width: 50%;
+    padding: 1%;
+    margin: 2%;
+}

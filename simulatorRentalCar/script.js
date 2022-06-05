@@ -66,6 +66,7 @@ function menuInicial() {
 }
 
 
+
 // Funciones:
     // 1. Agregar nuevo carro:
     function agregarCarroNuevo() {
@@ -83,6 +84,21 @@ function menuInicial() {
 
         alert("Carro creado con éxito");
         console.table(catalogo);
+
+//---------------------------
+    // ----------------------DOM--------------------------
+    // 01. Modificar elementos en el HTML
+    // => 1. Carro nuevo agregado al array 
+    // Al crear carro nuevo aparece en pantalla
+
+        const marcaCarNew = document.getElementById("marcaCarNew");
+        const modeloCarNew = document.getElementById("modeloCarNew");
+        const anioCarNew = document.getElementById("anioCarNew");
+
+        marcaCarNew.innerHTML = marca;
+        modeloCarNew.innerHTML = modelo;
+        anioCarNew.innerHTML = anio;
+// ----------------------------
     }
 
     // Funcion de crear ID automaticamente:
@@ -103,6 +119,27 @@ function menuInicial() {
         catalogo.forEach( (carro) => {
             console.log(carro.marca + " " + carro.modelo + " " + carro.anio);
         })
+
+//-------------------
+    // ----------------------DOM--------------------------
+        // 02. Crear elementos en el HTML
+        // => 2. Listado de carros disponibles en el Array: 
+        // Lista los carros disponibles en el array:
+
+        for(const carro of catalogo) {
+            let contenedor = document.createElement("div");
+        
+            contenedor.innerHTML = `<h3> ID: ${carro.id}</h3>
+                                    <p> Marca: ${carro.marca} </p>
+                                    <p> Modelo: ${carro.modelo} </p>
+                                    <p> Año: ${carro.anio} </p>`;
+            
+        
+            let listCarFindDiv = document.getElementById("carFindDiv");
+            listCarFindDiv.appendChild(contenedor);
+        }
+//-------------------
+
     }
 
 
@@ -110,5 +147,14 @@ function menuInicial() {
     function buscarCarro() {
         let buscarMarcaCarro = prompt("Ingrese la marca del carro");
 
-        return catalogo.find( (buscarMarca) => buscarMarca.marca.toLowerCase() == buscarMarcaCarro.toLowerCase())
+        return catalogo.find( (buscarMarca) => buscarMarca.marca.toLowerCase() == buscarMarcaCarro.toLowerCase());
     }
+
+
+
+
+
+// ----------------------DOM--------------------------
+    // 02. Crear elementos en el HTML
+    // => 3. Carro buscado: 
+    // Al buscar un carro este se crea en el html:
