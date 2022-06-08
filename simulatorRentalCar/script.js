@@ -29,7 +29,7 @@ let catalogo = [car1, car2, car3, car4, car5, car6, car7, car8, car9, car10];
 
 
 // Menu inicial:
-menuInicial();
+//menuInicial();
 
 function menuInicial() {
     let opcion = 0;
@@ -70,7 +70,7 @@ function menuInicial() {
 // Funciones:
     // 1. Agregar nuevo carro:
     function agregarCarroNuevo() {
-        
+
         // Variables
         let marca = prompt("Ingrese la marca del carro");
         let modelo = prompt("Ingrese el modelo del carro");
@@ -88,7 +88,7 @@ function menuInicial() {
 //---------------------------
     // ----------------------DOM--------------------------
     // 01. Modificar elementos en el HTML
-    // => 1. Carro nuevo agregado al array 
+    // => 1. Carro nuevo agregado al array
     // Al crear carro nuevo aparece en pantalla
 
         const marcaCarNew = document.getElementById("marcaCarNew");
@@ -123,18 +123,18 @@ function menuInicial() {
 //-------------------
     // ----------------------DOM--------------------------
         // 02. Crear elementos en el HTML
-        // => 2. Listado de carros disponibles en el Array: 
+        // => 2. Listado de carros disponibles en el Array:
         // Lista los carros disponibles en el array:
 
         for(const carro of catalogo) {
             let contenedor = document.createElement("div");
-        
+
             contenedor.innerHTML = `<h3> ID: ${carro.id}</h3>
                                     <p> Marca: ${carro.marca} </p>
                                     <p> Modelo: ${carro.modelo} </p>
                                     <p> Año: ${carro.anio} </p>`;
-            
-        
+
+
             let listCarFindDiv = document.getElementById("carFindDiv");
             listCarFindDiv.appendChild(contenedor);
         }
@@ -156,5 +156,11 @@ function menuInicial() {
 
 // ----------------------DOM--------------------------
     // 02. Crear elementos en el HTML
-    // => 3. Carro buscado: 
+    // => 3. Carro buscado:
     // Al buscar un carro este se crea en el html:
+
+
+
+
+/*---------------------------EVENTOS---------------------------*/
+  // SECTION VEHÍCULOS:

@@ -29,12 +29,12 @@
         </div>
 
         <!--FECHAS-->
-        <div class="row justify-content-md-center p-3 mb-2 bg-secondary text-white rounded-3">
+        <div class="p-3 mb-2 bg-secondary text-white rounded-3">
             <div class="col-md-auto" id="carNew">
                 <p class="fs-3 text-center fw-semibold"><i class="fa-solid fa-calendar-range"></i> Dates</p>
                 <p class="fs-6 text-center">Select the pickup and return dates</p>
                 <div class="form-class">
-                    <form class="">
+                    <form class="form__form">
                         <div class="text-center">
                             <label for="">Pickup</label><br>
                             <input type="date">
@@ -43,8 +43,8 @@
                             <label for="">Return</label><br>
                             <input type="date">
                         </div>
-                        <div class="">
-                            <button type="button" class="btn btn-outline-warning">Warning</button>
+                        <div class="button_form">
+                            <button type="button" class="btn btn-outline-warning">Book</button>
                         </div>
                     </form>
                 </div>
@@ -52,23 +52,29 @@
         </div>
 
         <!--VEHÍCULOS-->
-        <div class="row justify-content-md-center p-3 mb-2 bg-warning text-dark rounded-3">
+        <div class="p-3 mb-2 bg-warning text-dark rounded-3">
             <div class="col-md-auto" id="carList">
                 <p class="fs-3 text-center fw-semibold">Vehicles</p>
                 <p class="fs-6 text-center">Compare different vehicle</p>
                 <div id="carFindDiv"></div>
             </div>
+            <div class="button_form">
+                <button type="button" class="btn btn-outline-secondary">View</button>
+            </div>
         </div>
 
         <!--BUSCAR CARRO-->
-        <div class="row justify-content-md-center p-3 mb-2 bg-secondary text-white rounded-3">
+        <div class="p-3 mb-2 bg-secondary text-white rounded-3">
             <div class="col-md-auto" id="carFind">
                 <p class="fs-3 text-center fw-semibold">Find a car</p>
+            </div>
+            <div class="button_form">
+                <button id="btnView" type="button" class="btn btn-outline-warning">Find</button>
             </div>
         </div>
 
         <!--NEW CARS-->
-        <div class="row justify-content-md-center p-3 mb-2 bg-warning text-dark rounded-3">
+        <div class="p-3 mb-2 bg-warning text-dark rounded-3">
             <div class="col-md-auto" id="carNew">
                 <p class="fs-3 text-center fw-semibold">New Cars</p>
                 <p class="fs-6 text-center">Create new cars</p>
@@ -77,6 +83,9 @@
                     <li id="modeloCarNew">Modelo del carro</li>
                     <li id="anioCarNew">Año del carro</li>
                 </ul>
+            </div>
+            <div class="button_form">
+                <button type="button" class="btn btn-outline-secondary">New</button>
             </div>
         </div>
 
