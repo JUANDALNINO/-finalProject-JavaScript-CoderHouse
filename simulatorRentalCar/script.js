@@ -22,6 +22,18 @@ let car7 = new Car(7, "Jeep", "Grand Cherokee", 2020);
 let car8 = new Car(8, "Toyota", "Tacoma", 2021);
 let car9 = new Car(9, "Ford", "Focus", 2018);
 let car10 = new Car(10, "Hyundai", "Accent", 2022);
+/*
+let car11 = new Car(11, "Renault", "Duster", 2017);
+let car12 = new Car(12, "", "", );
+let car13 = new Car(13, "", "", );
+let car14 = new Car(14, "", "", );
+let car15 = new Car(15, "", "", );
+let car16 = new Car(16, "", "", );
+let car17 = new Car(17, "", "", );
+let car18 = new Car(18, "", "", );
+let car19 = new Car(19, "", "", );
+let car20 = new Car(20, "", "", );
+*/
 
 
 // Array de catálogo:
@@ -29,7 +41,7 @@ let catalogo = [car1, car2, car3, car4, car5, car6, car7, car8, car9, car10];
 
 
 // Menu inicial:
-menuInicial();
+//menuInicial();
 
 function menuInicial() {
     let opcion = 0;
@@ -49,7 +61,7 @@ function menuInicial() {
             case 3: {
                 let carroEncontrado = buscarCarro();
 
-                console.log("Carros encontrados:");
+                console.log("Carros encontrado:");
                 console.table(carroEncontrado);
                 break;
             }
@@ -83,7 +95,6 @@ function menuInicial() {
         catalogo.push(newCar);
 
         alert("Carro creado con éxito");
-        console.table(catalogo);
 
 //---------------------------
     // ----------------------DOM--------------------------
@@ -114,17 +125,6 @@ function menuInicial() {
 
     // 2. Ver listado de carros disponibles
     function listarCarros() {
-        console.log("El listado de los carros es:");
-
-        catalogo.forEach( (carro) => {
-            console.log(carro.marca + " " + carro.modelo + " " + carro.anio);
-        })
-
-//-------------------
-    // ----------------------DOM--------------------------
-        // 02. Crear elementos en el HTML
-        // => 2. Listado de carros disponibles en el Array:
-        // Lista los carros disponibles en el array:
 
         for(const carro of catalogo) {
             let contenedor = document.createElement("div");
@@ -138,29 +138,28 @@ function menuInicial() {
             let listCarFindDiv = document.getElementById("carFindDiv");
             listCarFindDiv.appendChild(contenedor);
         }
-//-------------------
-
     }
 
+
+//---------------------------------
 
     // 3. Buscar un carro:
     function buscarCarro() {
-        let buscarMarcaCarro = prompt("Ingrese la marca del carro");
+        let buscarMarcaCarro = prompt("Ingrese la marca o el modelo del carro");
 
         return catalogo.find( (buscarMarca) => buscarMarca.marca.toLowerCase() == buscarMarcaCarro.toLowerCase());
     }
-
-
-
-
 
 // ----------------------DOM--------------------------
     // 02. Crear elementos en el HTML
     // => 3. Carro buscado:
     // Al buscar un carro este se crea en el html:
 
+    function carroBuscando() {
+        let carroEncontrado = buscarCarro();
 
+        alert("Carro encontrado con éxito. Inspecciona la consola para verlo!");
 
-
-/*---------------------------EVENTOS---------------------------*/
-  // SECTION VEHÍCULOS:
+                console.log("Carros encontrado:");
+                console.table(carroEncontrado);
+    }

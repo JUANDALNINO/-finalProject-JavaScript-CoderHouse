@@ -35,16 +35,18 @@
                 <p class="fs-6 text-center">Select the pickup and return dates</p>
                 <div class="form-class">
                     <form class="form__form">
-                        <div class="text-center">
-                            <label for="">Pickup</label><br>
-                            <input type="date">
-                        </div>
-                        <div class="text-center">
-                            <label for="">Return</label><br>
-                            <input type="date">
+                        <div id="container_calendar">
+                            <div class="text-center">
+                                <label for="">Pickup</label><br>
+                                <input type="date">
+                            </div>
+                            <div class="text-center">
+                                <label for="">Return</label><br>
+                                <input type="date">
+                            </div>
                         </div>
                         <div class="button_form">
-                            <button type="button" class="btn btn-outline-warning">Book</button>
+                            <button id="btnBook" type="button" class="btn btn-outline-warning">View</button>
                         </div>
                     </form>
                 </div>
@@ -59,17 +61,18 @@
                 <div id="carFindDiv"></div>
             </div>
             <div class="button_form">
-                <button type="button" class="btn btn-outline-secondary">View</button>
+                <button id="btnView" type="button" class="btn btn-outline-secondary">View</button>
             </div>
         </div>
 
         <!--BUSCAR CARRO-->
         <div class="p-3 mb-2 bg-secondary text-white rounded-3">
             <div class="col-md-auto" id="carFind">
-                <p class="fs-3 text-center fw-semibold">Find a car</p>
+                <p id="title_find" class="fs-3 text-center fw-semibold">Find a car</p>
+                <div id="carSearchDiv"></div>
             </div>
             <div class="button_form">
-                <button id="btnView" type="button" class="btn btn-outline-warning">Find</button>
+                <button id="btn_Find" type="button" class="btn btn-outline-warning">Find</button>
             </div>
         </div>
 
@@ -85,13 +88,13 @@
                 </ul>
             </div>
             <div class="button_form">
-                <button type="button" class="btn btn-outline-secondary">New</button>
+                <button id="btn_NewCar" type="button" class="btn btn-outline-secondary">New</button>
             </div>
         </div>
 
         <!--Footer-->
-        <div class="fs-10 fs-6 text-end text-secondary" id="by">
-            <p>Por: Juan David Lizarralde Niño</p>
+        <div class="fs-8 fs-6 text-center text-secondary" id="by">
+            <a class="btn btn btn-dark" href="https://github.com/JUANDALNINO/-finalProject-JavaScript-CoderHouse" target="_blank">Por: Juan David Lizarralde Niño</a>
         </div>
     </div>
 
@@ -107,6 +110,7 @@
         crossorigin="anonymous"></script>
 
     <!--SCRIPTS-->
+    <script src="./front.js"></script>
     <script src="./script.js"></script>
 
 </body>
