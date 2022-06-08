@@ -1,80 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!--STYLES BOOTSTRAP-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!--STYLES BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 
-<!--STYLES-->
+    <!--STYLES-->
     <link rel="stylesheet" href="./styles.css">
     <title>Rental Car</title>
 </head>
+
 <body>
-  <div class="container-fluid">
-    <!---->
-    <div class="fs-1 text-warning text-center fw-bold">
-        <p>Rental Car</p>
+    <div class="container-fluid">
+        <!--TITLE-->
+        <div class="fs-1 text-warning text-center fw-bold title-container">
+            <p>RENTAL CAR</p>
+        </div>
+        <div class="fs-6 text-center text-secondary">
+            <p>La idea del proyecto es realizar un simulador de renta de carros.<br>
+                Hay un listado de carros. El cliente elige según lo que busca y fechas disponiles el carro a alquilar.
+            </p>
+        </div>
+
+        <!--FECHAS-->
+        <div class="row justify-content-md-center p-3 mb-2 bg-secondary text-white rounded-3">
+            <div class="col-md-auto" id="carNew">
+                <p class="fs-3 text-center fw-semibold"><i class="fa-solid fa-calendar-range"></i> Dates</p>
+                <p class="fs-6 text-center">Select the pickup and return dates</p>
+                <div class="form-class">
+                    <form class="">
+                        <div class="text-center">
+                            <label for="">Pickup</label><br>
+                            <input type="date">
+                        </div>
+                        <div class="text-center">
+                            <label for="">Return</label><br>
+                            <input type="date">
+                        </div>
+                        <div class="">
+                            <button type="button" class="btn btn-outline-warning">Warning</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--VEHÍCULOS-->
+        <div class="row justify-content-md-center p-3 mb-2 bg-warning text-dark rounded-3">
+            <div class="col-md-auto" id="carList">
+                <p class="fs-3 text-center fw-semibold">Vehicles</p>
+                <p class="fs-6 text-center">Compare different vehicle</p>
+                <div id="carFindDiv"></div>
+            </div>
+        </div>
+
+        <!--BUSCAR CARRO-->
+        <div class="row justify-content-md-center p-3 mb-2 bg-secondary text-white rounded-3">
+            <div class="col-md-auto" id="carFind">
+                <p class="fs-3 text-center fw-semibold">Find a car</p>
+            </div>
+        </div>
+
+        <!--NEW CARS-->
+        <div class="row justify-content-md-center p-3 mb-2 bg-warning text-dark rounded-3">
+            <div class="col-md-auto" id="carNew">
+                <p class="fs-3 text-center fw-semibold">New Cars</p>
+                <p class="fs-6 text-center">Create new cars</p>
+                <ul id="listCarNew">
+                    <li id="marcaCarNew">Marca del carro</li>
+                    <li id="modeloCarNew">Modelo del carro</li>
+                    <li id="anioCarNew">Año del carro</li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Footer-->
+        <div class="fs-10 fs-6 text-end text-secondary" id="by">
+            <p>Por: Juan David Lizarralde Niño</p>
+        </div>
     </div>
-    <div class="fs-6 text-center text-secondary">
-        <p>La idea del proyecto es realizar un simulador de renta de carros.<br>
-        Hay un listado de carros. El cliente elige según lo que busca y fechas disponiles el carro a alquilar.</p>
-    </div>
-
-    <!--1era-FECHAS-->
-    <div class="row justify-content-md-center p-3 mb-2 bg-secondary text-white rounded-3">
-      <div class="col-md-auto" id="carNew">
-          <p class="fs-3 text-center fw-semibold"><i class="fa-solid fa-calendar-range"></i> Dates</p>
-          <p class="fs-6 text-center">Select the pickup and return dates</p>
-      </div>
-    </div>
-
-    <!--2da-VEHÍCULOS-->
-    <div class="row justify-content-md-center p-3 mb-2 bg-warning text-dark rounded-3">
-      <div class="col-md-auto" id="carList">
-          <p class="fs-3 text-center fw-semibold">Vehicles</p>
-          <p class="fs-6 text-center">Compare different vehicle</p>
-          <div id="carFindDiv"></div>
-      </div>
-    </div>
-
-    <!--2da-etapa-->
-    <div class="row justify-content-md-center p-3 mb-2 bg-secondary text-white rounded-3">
-      <div class="col-md-auto" id="carNew">
-          <h4>1. Carro nuevo y recien creado ha sido agregado al array:</h4>
-          <ul id="listCarNew">
-              <li id="marcaCarNew">Marca del carro</li>
-              <li id="modeloCarNew">Modelo del carro</li>
-              <li id="anioCarNew">Año del carro</li>
-          </ul>
-      </div>
-    </div>
-
-    <!--3era-etapa-->
-    <div class="row justify-content-md-center p-3 mb-2 bg-secondary text-white rounded-3">
-      <div class="col-md-auto" id="carFind">
-          <h4>3. El carro que buscas es:</h4>
-      </div>
-    </div>
-
-<!--Footer-->
-    <div class="fs-10 fs-6 text-end text-secondary" id="by">
-        <p>Por: Juan David Lizarralde Niño</p>
-    </div>
-  </div>
 
 
 
 
-<!--SCRIPTS BOOTSTRAP-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <!--SCRIPTS BOOTSTRAP-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
 
-<!--SCRIPTS-->
+    <!--SCRIPTS-->
     <script src="./script.js"></script>
 
 </body>
+
 </html>

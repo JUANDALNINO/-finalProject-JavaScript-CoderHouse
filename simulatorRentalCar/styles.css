@@ -1,0 +1,9 @@
+.title-container {
+    margin-top: 5%;
+}
+
+.form-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
