@@ -5,13 +5,20 @@ function formCalendar() {
   bookCalendar();
 }
 
-// Ocultar:
+// Book:
 let btnBook = document.getElementById("btnBook");
 
 btnBook.addEventListener("click", function () {
   bookCalendar();
 
 });
+
+// Reservation:
+let btnReservation = document.getElementById("btnReservation");
+
+btnReservation.addEventListener("click", function () {
+  newReservationFun();
+})
 
 
 // SECTION VEHÍCULOS:

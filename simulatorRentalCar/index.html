@@ -31,7 +31,8 @@
         </div>
         <!--Footer-->
         <div class="fs-8 fs-6 text-center text-secondary" id="by">
-            <a class="btn btn btn-dark" href="https://github.com/JUANDALNINO/-finalProject-JavaScript-CoderHouse" target="_blank">Por: Juan David Lizarralde Niño</a>
+            <a class="btn btn btn-dark" href="https://github.com/JUANDALNINO/-finalProject-JavaScript-CoderHouse"
+                target="_blank">Por: Juan David Lizarralde Niño</a>
         </div>
 
         <!--FECHAS-->
@@ -54,6 +55,11 @@
                         <div id="printBook"></div>
                         <div class="button_form">
                             <button id="btnBook" type="button" class="btn btn-outline-warning">Book</button>
+                        </div>
+                        <div id="printReservation"></div>
+                        <div class="button_form">
+                            <button id="btnReservation" type="button" class="btn btn-outline-warning">My
+                                reservation</button>
                         </div>
                     </form>
                 </div>
@@ -97,27 +103,29 @@
                     <input type="text" placeholder="Write the Model" id="modelCar" name="modelCar">
                     <input type="number" placeholder="Write the Year" id="yearCar" name="yearCar">
                 </form>
-                <div id="listCarNew"><div>
+                <div id="listCarNew">
+                    <div>
+                    </div>
+                </div>
+                <div class="button_form">
+                    <button id="btn_NewCar" type="button" class="btn btn-warning">New</button>
+                </div>
+
             </div>
-        </div>
-        <div class="button_form">
-            <button id="btn_NewCar" type="button" class="btn btn-warning">New</button>
-        </div>
 
-    </div>
+            <!--SCRIPTS BOOTSTRAP-->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+                integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+                integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+                crossorigin="anonymous"></script>
 
-    <!--SCRIPTS BOOTSTRAP-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
-        crossorigin="anonymous"></script>
-
-    <!--SCRIPTS-->
-    <script src="./js/front.js"></script>
-    <script src="./js/script.js"></script>
-
+            <!--SCRIPTS-->
+            <script src="./js/classes.js"></script>
+            <script src="./js/front.js"></script>
+            <script src="./js/script.js"></script>
+            <script src="./js/jsonAndStorage.js"></script>
 </body>
 
 </html>

@@ -1,14 +1,4 @@
-// Objetos a tratar => carros
 
-// La clase como molde para los carros:
-class Car {
-    constructor(id, marca, modelo, anio) {
-        this.id = id;
-        this.marca = marca;
-        this.modelo = modelo;
-        this.anio = anio;
-    }
-}
 
 
 // Carros disponibles:
@@ -43,39 +33,39 @@ let catalogo = [car1, car2, car3, car4, car5, car6, car7, car8, car9, car10];
 // Menu inicial:
 //menuInicial();
 
-function menuInicial() {
-    let opcion = 0;
+// function menuInicial() {
+//     let opcion = 0;
 
-    while (opcion != 10) {
-        opcion = Number(prompt("Seleccione una opción: 1. Agregar nuevo carro - 2. Ver listado de carros disponibles - 3. Buscar un carro -  10. Salir"));
+//     while (opcion != 10) {
+//         opcion = Number(prompt("Seleccione una opción: 1. Agregar nuevo carro - 2. Ver listado de carros disponibles - 3. Buscar un carro -  10. Salir"));
 
-        switch (opcion) {
-            case 1: {
-                agregarCarroNuevo();
-                break;
-            }
-            case 2: {
-                listarCarros();
-                break;
-            }
-            case 3: {
-                let carroEncontrado = buscarCarro();
+//         switch (opcion) {
+//             case 1: {
+//                 agregarCarroNuevo();
+//                 break;
+//             }
+//             case 2: {
+//                 listarCarros();
+//                 break;
+//             }
+//             case 3: {
+//                 let carroEncontrado = buscarCarro();
 
-                console.log("Carros encontrado:");
-                console.table(carroEncontrado);
-                break;
-            }
-            case 10: {
-                alert("Gracias por preferirnos");
-                break;
-            }
-            default: {
-                alert("Opción invalida");
-                break;
-            }
-        }
-    }
-}
+//                 console.log("Carros encontrado:");
+//                 console.table(carroEncontrado);
+//                 break;
+//             }
+//             case 10: {
+//                 alert("Gracias por preferirnos");
+//                 break;
+//             }
+//             default: {
+//                 alert("Opción invalida");
+//                 break;
+//             }
+//         }
+//     }
+// }
 
 
 
@@ -91,19 +81,20 @@ function agregarCarroNuevo() {
     let modelo = newCarFormNew.get("modelCar");
     let anio = newCarFormNew.get("yearCar");
 
+    if (marca != 0 && modelo != 0 && anio != 0) {
 
-    // Objeto carro nuevo:
-    let newCar = new Car(getId(), marca, modelo, anio);
+        // Objeto carro nuevo:
+        let newCar = new Car(getId(), marca, modelo, anio);
 
-    // Agregar carro al array:
-    catalogo.push(newCar);
+        // Agregar carro al array:
+        catalogo.push(newCar);
 
-    alert("Carro creado con éxito");
+        alert("Carro creado con éxito");
 
-    const divNewCar = document.getElementById("listCarNew");
-    let newCarContainer = document.createElement("div");
+        const divNewCar = document.getElementById("listCarNew");
+        let newCarContainer = document.createElement("div");
 
-    divNewCar.innerHTML = `<div class="cardCarNew">
+        divNewCar.innerHTML = `<div class="cardCarNew">
                                 <div class="carInfo">
                                     <p> Marca: ${marca} </p>
                                     <p> Modelo: ${modelo} </p>
@@ -111,7 +102,11 @@ function agregarCarroNuevo() {
                                 </div>
                             </div>`;
 
-    divNewCar.appendChild(newCarContainer);
+        divNewCar.appendChild(newCarContainer);
+
+    } else {
+        alert("Please write in the blank");
+    }
 
     // ----------------------------
 }
@@ -155,7 +150,7 @@ function buscarCarro() {
 
     console.log(buscarMarcaCarro)
 
-    return catalogo.find( (buscarMarca) => buscarMarca.marca.toLowerCase() == buscarMarcaCarro.toLowerCase());
+    return catalogo.find((buscarMarca) => buscarMarca.marca.toLowerCase() == buscarMarcaCarro.toLowerCase());
 }
 
 
@@ -186,30 +181,33 @@ function bookCalendar() {
 };
 
 
-
-
-
 // Add => PickUp and Return
 
 function addDataPickReturn() {
     let pickDate = document.getElementById("datePick").value;
     let returnDate = document.getElementById("dateReturn").value;
 
-    printCalendar(pickDate, returnDate);
+    if (pickDate != 0 && returnDate != 0) {
+        printCalendar(pickDate, returnDate);
+    } else {
+        alert("Please select your data calendar")
+    }
 }
 
-    
 
 
 // Print => On HTML
 
 function printCalendar(pickDate, returnDate) {
+
+    printCalendarTwo(pickDate, returnDate);
+
     const divBookRef = document.getElementById("printBook");
 
     bookContainer = document.createElement("div");
-    bookContainer.innerHTML = `<div class="cardCar">
+    bookContainer.innerHTML = `<div class="cardCarCalendar">
                                     <div class="carInfo">
-                                        <p> Your reservation starts on: <br>
+                                        <p> Congrats!<br>You have a new reservation: <br>
                                         ${pickDate} </p> 
                                         <p>And finish on: <br>${returnDate}</p>
                                     </div>
