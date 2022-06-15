@@ -40,19 +40,20 @@
                 <p class="fs-3 text-center fw-semibold"><i class="fa-solid fa-calendar-range"></i> Dates</p>
                 <p class="fs-6 text-center">Select the pickup and return dates</p>
                 <div class="form-class">
-                    <form class="form__form">
+                    <form class="formCalendar" id="formCalendar">
                         <div id="container_calendar">
                             <div class="text-center">
-                                <label for="">Pickup</label><br>
-                                <input type="date">
+                                <label for="datePick">Pickup</label><br>
+                                <input type="date" id="datePick" name="datePick">
                             </div>
                             <div class="text-center">
-                                <label for="">Return</label><br>
-                                <input type="date">
+                                <label for="dateReturn">Return</label><br>
+                                <input type="date" id="dateReturn" name="dateReturn">
                             </div>
                         </div>
+                        <div id="printBook"></div>
                         <div class="button_form">
-                            <button id="btnBook" type="button" class="btn btn-outline-warning">Ocult</button>
+                            <button id="btnBook" type="button" class="btn btn-outline-warning">Book</button>
                         </div>
                     </form>
                 </div>

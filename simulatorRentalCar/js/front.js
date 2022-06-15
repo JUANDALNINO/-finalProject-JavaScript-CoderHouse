@@ -1,20 +1,24 @@
 /*---------------------------EVENTOS---------------------------*/
 
 // SECTION CALENDAR:
+function formCalendar() {
+  bookCalendar();
+}
+
 // Ocultar:
 let calendar = document.getElementById("container_calendar");
 
 let btnBook = document.getElementById("btnBook");
 
 btnBook.addEventListener("click", function () {
-
-  if (calendar.style.display != "none") {
-    calendar.style.display = "none";
-    btnBook.textContent = "View";
-  } else {
-    calendar.style.display = "block";
-    btnBook.textContent = "Ocult";
-  }
+  formCalendar();
+  // if (calendar.style.display != "none") {
+  //   calendar.style.display = "none";
+  //   btnBook.textContent = "View";
+  // } else {
+  //   calendar.style.display = "block";
+  //   btnBook.textContent = "Ocult";
+  // }
 });
 
 

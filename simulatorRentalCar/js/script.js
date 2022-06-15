@@ -92,13 +92,6 @@ function agregarCarroNuevo() {
     let anio = newCarFormNew.get("yearCar");
 
 
-    //let marca = document.getElementById("brandCar").value;
-    //let marca = prompt("Ingrese la marca del carro");
-    //let modelo = document.getElementById("modelCar").value;
-    //let modelo = prompt("Ingrese el modelo del carro");
-    //let anio = document.getElementById("yearCar").value;
-    //let anio = Number(prompt("Ingrese el año del carro"));
-
     // Objeto carro nuevo:
     let newCar = new Car(getId(), marca, modelo, anio);
 
@@ -171,4 +164,34 @@ function carroBuscando() {
 
     console.log("Carros encontrado:");
     console.table(carroEncontrado);
+}
+
+
+//---------------------------------
+
+// SECTION CALENDAR:
+let formName ="";
+function bookCalendar() {
+    const formCalendar = document.getElementById("formCalendar");
+
+  formCalendar.addEventListener("click", function() {
+      let formData = new FormData(formCalendar);
+      formName = formData.get("datePick");
+      printCalendar();
+  })
+};
+
+function printCalendar() {
+    const divBookRef = document.getElementById("printBook");
+
+    bookContainer = document.createElement("div");
+    bookContainer.innerHTML = `<div class="cardCar">
+                                    <div class="carInfo">
+                                        <p> Your reservation starts on: ${formName} </p>
+                                    </div>
+                                </div>`;
+
+    divBookRef.appendChild(bookContainer);
+
+    //Video min 15
 }
