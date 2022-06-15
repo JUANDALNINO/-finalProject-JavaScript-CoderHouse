@@ -24,14 +24,10 @@
 }
 
 /*-----------------------SECTION => CALENDAR-------------------------*/
-.formCalendar {
-  padding: 1em;
-  margin: 1em;
-  border: 4px solid whitesmoke;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.30);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(3px);
+.printReservation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /*-----------------------SECTION => VEHICLES-------------------------*/
@@ -92,6 +88,19 @@
   text-align: left;
 }
 
+.cardCarReservation {
+  padding: 1em;
+  margin: 1em;
+  width: 15em;
+  height: 100%;
+  border: 4px solid whitesmoke;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.30);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  text-align: left;
+}
+
 .cardCar {
   padding: 1em;
   margin: 1em;
@@ -109,7 +118,7 @@
   padding: 1em;
   margin: 1em;
   width: 15em;
-  height: 10em;
+  height: auto;
   border: 4px solid whitesmoke;
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.30);

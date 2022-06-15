@@ -96,9 +96,10 @@ function agregarCarroNuevo() {
 
         divNewCar.innerHTML = `<div class="cardCarNew">
                                 <div class="carInfo">
-                                    <p> Marca: ${marca} </p>
-                                    <p> Modelo: ${modelo} </p>
-                                    <p> Año: ${anio} </p>
+                                    <p> Brand: ${marca} </p>
+                                    <p> Model: ${modelo} </p>
+                                    <p> Year: ${anio} </p>
+                                    <p> You can see this car in the list Vehicles </p>
                                 </div>
                             </div>`;
 
@@ -146,9 +147,7 @@ function listarCarros() {
 
 // 3. Buscar un carro:
 function buscarCarro() {
-    let buscarMarcaCarro = prompt("Ingrese la marca del carro");
-
-    console.log(buscarMarcaCarro)
+    let buscarMarcaCarro = document.getElementById("brandCarSearch").value;
 
     return catalogo.find((buscarMarca) => buscarMarca.marca.toLowerCase() == buscarMarcaCarro.toLowerCase());
 }
@@ -196,8 +195,7 @@ function addDataPickReturn() {
 
 
 
-// Print => On HTML
-
+// Print new reservation => On HTML
 function printCalendar(pickDate, returnDate) {
 
     printCalendarTwo(pickDate, returnDate);
@@ -214,4 +212,24 @@ function printCalendar(pickDate, returnDate) {
                                 </div>`;
 
     divBookRef.appendChild(bookContainer);
+}
+
+
+// Print load reservation:
+function printLoadComplete(load) {
+    console.log(load); // Array
+
+    for(const loading of LoadCompleteReser) {
+        const divReservation = document.getElementById("printReservation");
+
+        let reservationContainer = document.createElement("div");
+            reservationContainer.innerHTML = `<div class="cardCarReservation">
+                                                <div class="">
+                                                    <p> Your reservation:</p>
+                                                    <p>Start on: ${loading.pickCar} to ${loading.returnCar}</p>
+                                                </div>
+                                            </div>`;
+    
+        divReservation.appendChild(reservationContainer);
+    }
 }

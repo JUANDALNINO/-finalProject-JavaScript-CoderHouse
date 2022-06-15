@@ -17,7 +17,7 @@ btnBook.addEventListener("click", function () {
 let btnReservation = document.getElementById("btnReservation");
 
 btnReservation.addEventListener("click", function () {
-  newReservationFun();
+  actualReser();
 })
 
 
