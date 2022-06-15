@@ -12,12 +12,14 @@
 
 
     <!--STYLES-->
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
     <title>Rental Car</title>
 </head>
 
 <body>
     <div class="container-fluid">
+        <!--NAV-BAR-->
+
         <!--TITLE-->
         <div class="fs-1 text-warning text-center fw-bold title-container">
             <p>RENTAL CAR</p>
@@ -26,6 +28,10 @@
             <p>La idea del proyecto es realizar un simulador de renta de carros.<br>
                 Hay un listado de carros. El cliente elige según lo que busca y fechas disponiles el carro a alquilar.
             </p>
+        </div>
+        <!--Footer-->
+        <div class="fs-8 fs-6 text-center text-secondary" id="by">
+            <a class="btn btn btn-dark" href="https://github.com/JUANDALNINO/-finalProject-JavaScript-CoderHouse" target="_blank">Por: Juan David Lizarralde Niño</a>
         </div>
 
         <!--FECHAS-->
@@ -46,7 +52,7 @@
                             </div>
                         </div>
                         <div class="button_form">
-                            <button id="btnBook" type="button" class="btn btn-outline-warning">View</button>
+                            <button id="btnBook" type="button" class="btn btn-outline-warning">Ocult</button>
                         </div>
                     </form>
                 </div>
@@ -54,14 +60,14 @@
         </div>
 
         <!--VEHÍCULOS-->
-        <div class="p-3 mb-2 bg-warning text-dark rounded-3">
+        <div class="p-3 mb-2 text-dark rounded-3 vehicles">
             <div class="col-md-auto" id="carList">
                 <p class="fs-3 text-center fw-semibold">Vehicles</p>
                 <p class="fs-6 text-center">Compare different vehicle</p>
                 <div id="carFindDiv"></div>
             </div>
             <div class="button_form">
-                <button id="btnView" type="button" class="btn btn-outline-secondary">View</button>
+                <button id="btnView" type="button" class="btn btn-warning">View</button>
             </div>
         </div>
 
@@ -77,29 +83,23 @@
         </div>
 
         <!--NEW CARS-->
-        <div class="p-3 mb-2 bg-warning text-dark rounded-3">
+        <div class="p-3 mb-2 text-dark rounded-3 newCars">
             <div class="col-md-auto" id="carNew">
                 <p class="fs-3 text-center fw-semibold">New Cars</p>
                 <p class="fs-6 text-center">Create new cars</p>
-                <ul id="listCarNew">
-                    <li id="marcaCarNew">Marca del carro</li>
-                    <li id="modeloCarNew">Modelo del carro</li>
-                    <li id="anioCarNew">Año del carro</li>
-                </ul>
+                <form id="formNewCar">
+                    <input type="text" placeholder="Write the Brand Car" id="brandCar" name="brandCar">
+                    <input type="text" placeholder="Write the Model" id="modelCar" name="modelCar">
+                    <input type="number" placeholder="Write the Year" id="yearCar" name="yearCar">
+                </form>
+                <div id="listCarNew"><div>
             </div>
-            <div class="button_form">
-                <button id="btn_NewCar" type="button" class="btn btn-outline-secondary">New</button>
-            </div>
+        </div>
+        <div class="button_form">
+            <button id="btn_NewCar" type="button" class="btn btn-warning">New</button>
         </div>
 
-        <!--Footer-->
-        <div class="fs-8 fs-6 text-center text-secondary" id="by">
-            <a class="btn btn btn-dark" href="https://github.com/JUANDALNINO/-finalProject-JavaScript-CoderHouse" target="_blank">Por: Juan David Lizarralde Niño</a>
-        </div>
     </div>
-
-
-
 
     <!--SCRIPTS BOOTSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
@@ -110,8 +110,8 @@
         crossorigin="anonymous"></script>
 
     <!--SCRIPTS-->
-    <script src="./front.js"></script>
-    <script src="./script.js"></script>
+    <script src="./js/front.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
 
