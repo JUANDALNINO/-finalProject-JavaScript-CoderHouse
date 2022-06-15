@@ -86,7 +86,7 @@ function agregarCarroNuevo() {
     // Variables
     let newCarForm = document.getElementById("formNewCar");
     let newCarFormNew = new FormData(newCarForm);
-    
+
     let marca = newCarFormNew.get("brandCar");
     let modelo = newCarFormNew.get("modelCar");
     let anio = newCarFormNew.get("yearCar");
@@ -136,9 +136,9 @@ function listarCarros() {
         contenedor = document.createElement("div");
         contenedor.innerHTML = `<div class="cardCar">
                                     <div class="carInfo">
-                                        <p> Marca: ${carro.marca} </p>
-                                        <p> Modelo: ${carro.modelo} </p>
-                                        <p> Año: ${carro.anio} </p>
+                                        <p> Brand: ${carro.marca} </p>
+                                        <p> Model: ${carro.modelo} </p>
+                                        <p> Year: ${carro.anio} </p>
                                     </div>
                                 </div>`;
 
@@ -151,47 +151,69 @@ function listarCarros() {
 
 // 3. Buscar un carro:
 function buscarCarro() {
-    let buscarMarcaCarro = prompt("Ingrese la marca o el modelo del carro");
+    let buscarMarcaCarro = prompt("Ingrese la marca del carro");
 
-    return catalogo.find((buscarMarca) => buscarMarca.marca.toLowerCase() == buscarMarcaCarro.toLowerCase());
+    console.log(buscarMarcaCarro)
+
+    return catalogo.find( (buscarMarca) => buscarMarca.marca.toLowerCase() == buscarMarcaCarro.toLowerCase());
 }
 
 
 function carroBuscando() {
-    let carroEncontrado = buscarCarro();
+    let contenedor = document.createElement("div");
+    let buscarMarca = buscarCarro();
 
-    alert("Carro encontrado con éxito. Inspecciona la consola para verlo!");
+    contenedor.innerHTML = `<div class="cardCar">
+                                <div class="carInfo">
+                                    <p> Brand: ${buscarMarca.marca}<p>
+                                    <p> Model: ${buscarMarca.modelo}<p>
+                                    <p> Year: ${buscarMarca.anio}<p>
+                                </div>
+                            </div>`;
 
-    console.log("Carros encontrado:");
-    console.table(carroEncontrado);
+    let carFind = document.getElementById("carSearchDiv");
+
+    carSearchDiv.appendChild(contenedor);
 }
 
 
 //---------------------------------
 
 // SECTION CALENDAR:
-let formName ="";
-function bookCalendar() {
-    const formCalendar = document.getElementById("formCalendar");
 
-  formCalendar.addEventListener("click", function() {
-      let formData = new FormData(formCalendar);
-      formName = formData.get("datePick");
-      printCalendar();
-  })
+function bookCalendar() {
+    addDataPickReturn();
 };
 
-function printCalendar() {
+
+
+
+
+// Add => PickUp and Return
+
+function addDataPickReturn() {
+    let pickDate = document.getElementById("datePick").value;
+    let returnDate = document.getElementById("dateReturn").value;
+
+    printCalendar(pickDate, returnDate);
+}
+
+    
+
+
+// Print => On HTML
+
+function printCalendar(pickDate, returnDate) {
     const divBookRef = document.getElementById("printBook");
 
     bookContainer = document.createElement("div");
     bookContainer.innerHTML = `<div class="cardCar">
                                     <div class="carInfo">
-                                        <p> Your reservation starts on: ${formName} </p>
+                                        <p> Your reservation starts on: <br>
+                                        ${pickDate} </p> 
+                                        <p>And finish on: <br>${returnDate}</p>
                                     </div>
                                 </div>`;
 
     divBookRef.appendChild(bookContainer);
-
-    //Video min 15
 }

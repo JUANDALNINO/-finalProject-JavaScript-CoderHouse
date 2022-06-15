@@ -6,19 +6,11 @@ function formCalendar() {
 }
 
 // Ocultar:
-let calendar = document.getElementById("container_calendar");
-
 let btnBook = document.getElementById("btnBook");
 
 btnBook.addEventListener("click", function () {
-  formCalendar();
-  // if (calendar.style.display != "none") {
-  //   calendar.style.display = "none";
-  //   btnBook.textContent = "View";
-  // } else {
-  //   calendar.style.display = "block";
-  //   btnBook.textContent = "Ocult";
-  // }
+  bookCalendar();
+
 });
 
 
