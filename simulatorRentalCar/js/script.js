@@ -30,45 +30,6 @@ let car20 = new Car(20, "", "", );
 let catalogo = [car1, car2, car3, car4, car5, car6, car7, car8, car9, car10];
 
 
-// Menu inicial:
-//menuInicial();
-
-// function menuInicial() {
-//     let opcion = 0;
-
-//     while (opcion != 10) {
-//         opcion = Number(prompt("Seleccione una opción: 1. Agregar nuevo carro - 2. Ver listado de carros disponibles - 3. Buscar un carro -  10. Salir"));
-
-//         switch (opcion) {
-//             case 1: {
-//                 agregarCarroNuevo();
-//                 break;
-//             }
-//             case 2: {
-//                 listarCarros();
-//                 break;
-//             }
-//             case 3: {
-//                 let carroEncontrado = buscarCarro();
-
-//                 console.log("Carros encontrado:");
-//                 console.table(carroEncontrado);
-//                 break;
-//             }
-//             case 10: {
-//                 alert("Gracias por preferirnos");
-//                 break;
-//             }
-//             default: {
-//                 alert("Opción invalida");
-//                 break;
-//             }
-//         }
-//     }
-// }
-
-
-
 // Funciones:
 // 1. Agregar nuevo carro:
 function agregarCarroNuevo() {
@@ -132,9 +93,9 @@ function listarCarros() {
         contenedor = document.createElement("div");
         contenedor.innerHTML = `<div class="cardCar">
                                     <div class="carInfo">
-                                        <p> Brand: ${carro.marca} </p>
-                                        <p> Model: ${carro.modelo} </p>
-                                        <p> Year: ${carro.anio} </p>
+                                        <p> Brand: ${carro?.marca} </p>
+                                        <p> Model: ${carro?.modelo} </p>
+                                        <p> Year: ${carro?.anio} </p>
                                     </div>
                                 </div>`;
 
@@ -159,9 +120,9 @@ function carroBuscando() {
 
     contenedor.innerHTML = `<div class="cardCar">
                                 <div class="carInfo">
-                                    <p> Brand: ${buscarMarca.marca}<p>
-                                    <p> Model: ${buscarMarca.modelo}<p>
-                                    <p> Year: ${buscarMarca.anio}<p>
+                                    <p> Brand: ${buscarMarca?.marca}<p>
+                                    <p> Model: ${buscarMarca?.modelo}<p>
+                                    <p> Year: ${buscarMarca?.anio}<p>
                                 </div>
                             </div>`;
 
@@ -186,10 +147,10 @@ function addDataPickReturn() {
     let pickDate = document.getElementById("datePick").value;
     let returnDate = document.getElementById("dateReturn").value;
 
-    if (pickDate != 0 && returnDate != 0) {
-        printCalendar(pickDate, returnDate);
-    } else {
-        alert("Please select your data calendar")
+    //With Ternario
+    selectDates();
+    function selectDates() {
+        (pickDate!=0 && returnDate!=0) ? printCalendar(pickDate, returnDate) : alert("Please select your data calendar");
     }
 }
 
@@ -217,7 +178,6 @@ function printCalendar(pickDate, returnDate) {
 
 // Print load reservation:
 function printLoadComplete(load) {
-    console.log(load); // Array
 
     for(const loading of LoadCompleteReser) {
         const divReservation = document.getElementById("printReservation");
@@ -226,7 +186,7 @@ function printLoadComplete(load) {
             reservationContainer.innerHTML = `<div class="cardCarReservation">
                                                 <div class="">
                                                     <p> Your reservation:</p>
-                                                    <p>Start on: ${loading.pickCar} to ${loading.returnCar}</p>
+                                                    <p>Start on: ${loading?.pickCar} to ${loading?.returnCar}</p>
                                                 </div>
                                             </div>`;
     
