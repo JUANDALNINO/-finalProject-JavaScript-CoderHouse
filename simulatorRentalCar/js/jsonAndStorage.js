@@ -37,7 +37,7 @@ function reservationLoad() {
 // Check reservation:
 function actualReser() {
     if(!actReser) {
-        alert("You don't have any reservations. Please book one.")
+        alertNotReservation();
     } else {
         newReservationFun();
     }

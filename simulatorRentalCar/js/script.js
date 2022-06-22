@@ -50,7 +50,7 @@ function agregarCarroNuevo() {
         // Agregar carro al array:
         catalogo.push(newCar);
 
-        alert("Carro creado con éxito");
+        alertCarCreated();
 
         const divNewCar = document.getElementById("listCarNew");
         let newCarContainer = document.createElement("div");
@@ -67,7 +67,7 @@ function agregarCarroNuevo() {
         divNewCar.appendChild(newCarContainer);
 
     } else {
-        alert("Please write in the blank");
+        alertWriteBlanks();
     }
 
     // ----------------------------
@@ -150,7 +150,7 @@ function addDataPickReturn() {
     //With Ternario
     selectDates();
     function selectDates() {
-        (pickDate!=0 && returnDate!=0) ? printCalendar(pickDate, returnDate) : alert("Please select your data calendar");
+        (pickDate!=0 && returnDate!=0) ? printCalendar(pickDate, returnDate) : alertFirstBook();
     }
 }
 
