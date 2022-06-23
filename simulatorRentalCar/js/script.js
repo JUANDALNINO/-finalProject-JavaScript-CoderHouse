@@ -161,14 +161,16 @@ function printCalendar(pickDate, returnDate) {
 
     printCalendarTwo(pickDate, returnDate);
 
+    newReservationToastify();
+
     const divBookRef = document.getElementById("printBook");
 
     bookContainer = document.createElement("div");
     bookContainer.innerHTML = `<div class="cardCarCalendar">
                                     <div class="carInfo">
-                                        <p> Congrats!<br>You have a new reservation: <br>
+                                        <p> Congrats!<br>Your reservation start on: <br>
                                         ${pickDate} </p> 
-                                        <p>And finish on: <br>${returnDate}</p>
+                                        <p>And finish: <br>${returnDate}</p>
                                     </div>
                                 </div>`;
 
@@ -185,7 +187,7 @@ function printLoadComplete(load) {
         let reservationContainer = document.createElement("div");
             reservationContainer.innerHTML = `<div class="cardCarReservation">
                                                 <div class="">
-                                                    <p> Your reservation:</p>
+                                                    <p>Your reservation:</p>
                                                     <p>Start on: ${loading?.pickCar} to ${loading?.returnCar}</p>
                                                 </div>
                                             </div>`;

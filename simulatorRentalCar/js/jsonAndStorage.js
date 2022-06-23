@@ -31,6 +31,7 @@ let LoadCompleteReser = [];
 function reservationLoad() {
     let loadReser = localStorage.getItem("myReservation");
     LoadCompleteReser = JSON.parse(loadReser);
+    alertLoadReser(LoadCompleteReser);
     printLoadComplete(LoadCompleteReser);
 }
 

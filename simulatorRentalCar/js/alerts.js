@@ -36,3 +36,33 @@ function alertWriteBlanks() {
         icon: "info",
     })
 }
+
+
+// Print alert load reservation:
+function alertLoadReser(alertLoad) {
+    for(const loading of LoadCompleteReser) {
+        Swal.fire({
+            title: "Your reservation:",
+            text: `Start on: ${loading?.pickCar} to ${loading?.returnCar}`,
+            icon: "success",
+        })
+    }
+}
+
+
+
+// Toastify New Reservation:
+function newReservationToastify() {
+    Toastify({
+        text: "You have a new reservation!",
+        duration: 3000,
+        position: "left",
+        style: {
+            background: "#ffc107",
+        }
+        }).showToast();
+}
+
+
+
+// Luxon Calendar
