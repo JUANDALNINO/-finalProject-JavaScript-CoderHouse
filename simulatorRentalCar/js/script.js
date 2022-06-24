@@ -150,7 +150,7 @@ function addDataPickReturn() {
     //With Ternario
     selectDates();
     function selectDates() {
-        (pickDate!=0 && returnDate!=0) ? printCalendar(pickDate, returnDate) : alertFirstBook();
+        (pickDate != 0 && returnDate != 0) ? printCalendar(pickDate, returnDate) : alertFirstBook();
     }
 }
 
@@ -181,17 +181,44 @@ function printCalendar(pickDate, returnDate) {
 // Print load reservation:
 function printLoadComplete(load) {
 
-    for(const loading of LoadCompleteReser) {
+    for (const loading of LoadCompleteReser) {
         const divReservation = document.getElementById("printReservation");
 
         let reservationContainer = document.createElement("div");
-            reservationContainer.innerHTML = `<div class="cardCarReservation">
+        reservationContainer.innerHTML = `<div class="cardCarReservation">
                                                 <div class="">
                                                     <p>Your reservation:</p>
                                                     <p>Start on: ${loading?.pickCar} to ${loading?.returnCar}</p>
                                                 </div>
                                             </div>`;
-    
+
         divReservation.appendChild(reservationContainer);
     }
+}
+
+
+
+// COUNTRIES---------------------------------------
+function buscarPais(country) {
+    fetch(country)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data[0].name.common); // Name country
+        console.log(data[0].capital); // Capital
+        console.log(data[0].flags.svg); // flag
+
+        const divCountry = document.getElementById("countryDiv");
+        let countryContainer = document.createElement("div");
+        countryContainer.innerHTML = `<div class="cardCarCalendar">
+                                        <div class="carInfo">
+                                            <p class="fw-semibold">Country:</p>
+                                            <p>${data[0].name.common}</p>
+                                            <p class="fw-semibold">Capital:</p>
+                                            <p>${data[0].capital}</p>
+                                            <p class="fw-semibold">Flag:</p>
+                                            <img src="${data[0].flags.svg}" class="flagImg">
+                                        </div>
+                                    </div>`;
+        divCountry.appendChild(countryContainer);
+    });
 }

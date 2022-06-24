@@ -37,10 +37,25 @@
                 target="_blank">Por: Juan David Lizarralde Niño</a>
         </div>
 
+        <!--CITIES-->
+        <div class="p-3 mb-2 bg-warning text-grey rounded-3">
+            <div class="col-md-auto" id="country">
+                <p class="fs-3 text-center fw-semibold">Countries</p>
+                <p class="fs-6 text-center">Find a car in your country</p>
+                <div id="countryDiv" class="formNewCar">
+                    <input type="text" placeholder="Write the country" id="countrySearch" name="countrySearch">
+                </div>
+            </div>
+            <div id="countryDiv"></div>
+            <div class="button_form">
+                <button id="btnCountry" type="button" class="btn btn-dark">Find</button>
+            </div>
+        </div>
+
         <!--FECHAS-->
         <div class="p-3 mb-2 bg-secondary text-white rounded-3">
             <div class="col-md-auto" id="carNew">
-                <p class="fs-3 text-center fw-semibold"><i class="fa-solid fa-calendar-range"></i> Dates</p>
+                <p class="fs-3 text-center fw-semibold">Dates</p>
                 <p class="fs-6 text-center">Select the pickup and return dates</p>
                 <div class="form-class">
                     <form class="formCalendar" id="formCalendar">
@@ -84,7 +99,7 @@
         <div class="p-3 mb-2 bg-secondary text-white rounded-3">
             <div class="col-md-auto" id="carFind">
                 <p id="title_find" class="fs-3 text-center fw-semibold">Find a car</p>
-                
+
                 <div id="DivSearchCar" class="formNewCar">
                     <input type="text" placeholder="Write the Brand Car" id="brandCarSearch" name="brandCarSearch">
                 </div>

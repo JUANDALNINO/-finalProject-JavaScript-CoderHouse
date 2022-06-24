@@ -43,3 +43,18 @@ let btnNewCar = document.getElementById("btn_NewCar");
 btnNewCar.addEventListener("click", function () {
   agregarCarroNuevo();
 })
+
+
+
+//----------------------
+// SECTION COUNTRIES
+const btnCountry = document.getElementById("btnCountry");
+const inputCountry = document.getElementById("countrySearch");
+
+
+btnCountry.addEventListener("click", function () {
+  let countryName = inputCountry.value;
+  let finalUrl = `https://restcountries.com/v3.1/name/${countryName}/`;
+
+  buscarPais(finalUrl);
+})
