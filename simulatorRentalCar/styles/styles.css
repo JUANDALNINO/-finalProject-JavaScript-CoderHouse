@@ -32,7 +32,6 @@
 
 /*-----------------------SECTION => VEHICLES-------------------------*/
 .vehicles {
-  background-image: url(/simulatorRentalCar/assets/back-01.jpg);
 }
 
 #carList {
@@ -54,7 +53,6 @@
 
 /*-----------------------SECTION => NEW CARS-------------------------*/
 .newCars {
-  background-image: url(/simulatorRentalCar/assets/back-02.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
