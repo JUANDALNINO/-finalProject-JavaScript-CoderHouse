@@ -156,3 +156,32 @@
   min-width: 7.5rem;
   margin: 1.8em auto 1.2em auto;
 }
+
+
+
+/**/
+
+
+/*Page Left*/
+#pageLeft {
+  background-color: chocolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+#logo {
+
+}
+
+#logo img {
+  width: 100%;
+}
+
+
+
+/*Page Right 01*/
+#pageOneRight {
+  background-color: blue;
+}

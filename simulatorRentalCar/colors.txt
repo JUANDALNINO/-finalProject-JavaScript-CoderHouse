@@ -12,3 +12,17 @@ A TODO COLOR:
 #025930
 #038C25
 #8FA63F
+
+
+<!--MODALS-->
+    <!--4. Derecha-->
+    <div id="pageFourRight">
+    </div>
+
+    <!--3. Derecha-->
+    <div id="pageThreeRight">
+    </div>
+
+    <!--2. Derecha-->
+    <div id="pageTwoRight">
+    </div>
