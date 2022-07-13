@@ -12,18 +12,8 @@ let car7 = new Car(7, "Jeep", "Grand Cherokee", 2020);
 let car8 = new Car(8, "Toyota", "Tacoma", 2021);
 let car9 = new Car(9, "Ford", "Focus", 2018);
 let car10 = new Car(10, "Hyundai", "Accent", 2022);
-/*
-let car11 = new Car(11, "Renault", "Duster", 2017);
-let car12 = new Car(12, "", "", );
-let car13 = new Car(13, "", "", );
-let car14 = new Car(14, "", "", );
-let car15 = new Car(15, "", "", );
-let car16 = new Car(16, "", "", );
-let car17 = new Car(17, "", "", );
-let car18 = new Car(18, "", "", );
-let car19 = new Car(19, "", "", );
-let car20 = new Car(20, "", "", );
-*/
+
+
 
 
 // Array de catálogo:
