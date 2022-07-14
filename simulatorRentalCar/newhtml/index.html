@@ -86,16 +86,12 @@
                     <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
                         sentence and probably just keep going until we run out of words.</p>
                     <div class="container d-inline-flex p-2">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Country</option>
-                            <option value="colombia">Colombia</option>
+                        <select class="form-select" aria-label="Default select example" id="countryList">
+                            <option selected disabled>Country</option>
                         </select>
 
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>City</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" aria-label="Default select example" id="cityList">
+                            <option selected disabled>City</option>
                         </select>
                     </div>
                 </div>
@@ -118,23 +114,16 @@
                     <!--Dates-->
                     <div class="container d-inline-flex p-2">
                         <!--Day-->
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Day</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" aria-label="Default select example" id="pickUpDay">
+                            <option selected disabled>Day</option>
                         </select>
                         <!--Month-->
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Month</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" aria-label="Default select example" id="pickUpMonth">
+                            <option selected disabled>Month</option>
                         </select>
                         <!--Year-->
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Year</option>
-                            <option value="1">2022</option>
+                        <select class="form-select" aria-label="Default select example" id="pickUpYear">
+                            <option selected disabled>Year</option>
                         </select>
                     </div>
                 </div>
@@ -158,23 +147,16 @@
                     <!--Dates-->
                     <div class="container d-inline-flex p-2">
                         <!--Day-->
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Day</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" aria-label="Default select example" id="returnDay">
+                            <option selected disabled>Day</option>
                         </select>
                         <!--Month-->
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Month</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" aria-label="Default select example" id="returnMonth">
+                            <option selected disabled>Month</option>
                         </select>
                         <!--Year-->
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Year</option>
-                            <option value="1">2022</option>
+                        <select class="form-select" aria-label="Default select example" id="returnYear">
+                            <option selected disabled>Year</option>
                         </select>
                     </div>
                 </div>
@@ -252,6 +234,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
+
+    <script src="/simulatorRentalCar/newJs/jsonAndStorage.js"></script>
+    <script src="/simulatorRentalCar/newJs/script.js"></script>
 </body>
 
 </html>

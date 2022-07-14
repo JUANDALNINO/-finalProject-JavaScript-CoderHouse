@@ -57,4 +57,5 @@ btnCountry.addEventListener("click", function () {
   let finalUrl = `https://restcountries.com/v3.1/name/${countryName}/`;
 
   buscarPais(finalUrl);
+
 })
