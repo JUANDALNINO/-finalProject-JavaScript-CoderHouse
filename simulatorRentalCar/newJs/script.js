@@ -1,6 +1,3 @@
-// Load JSON
-
-
 
 // Init App
 initApp();
@@ -18,11 +15,15 @@ function initApp() {
 //---------------------------------------------------------------------------------------------------------------------
 // Json and storage
 function loadData() {
+    // Booking
     loadDatesDays();
     loadDatesMonths();
     loadDatesYear();
     loadCountries();
     loadCities();
+
+    // List Cars
+    loadCars();
 }
 
 
@@ -30,7 +31,7 @@ function loadData() {
 //---------------------------------------------------------------------------------------------------------------------
 // Scripts
 
-// Funcion imprimir datos calendario:
+//--------------- Funcion imprimir datos calendario:
 /* Dates
 console.log(jsonArray["calendar"][0]["days"]);
 console.log(jsonArray["calendar"][0]["months"]);
@@ -94,23 +95,23 @@ function loadDatesYear() {
 
     let year = jsonArray["calendar"][0]["year"];
 
-        let yearContainer = document.getElementById("pickUpYear");
-        container = document.createElement("option");
+    let yearContainer = document.getElementById("pickUpYear");
+    container = document.createElement("option");
 
-        container.innerHTML = `<option value="1">${year}</option>`;
+    container.innerHTML = `<option value="1">${year}</option>`;
 
-        yearContainer.appendChild(container);
+    yearContainer.appendChild(container);
 
-        let yearContainer2 = document.getElementById("returnYear");
-        containerTwo = document.createElement("option");
+    let yearContainer2 = document.getElementById("returnYear");
+    containerTwo = document.createElement("option");
 
-        containerTwo.innerHTML = `<option value="1">${year}</option>`;
+    containerTwo.innerHTML = `<option value="1">${year}</option>`;
 
-        yearContainer2.appendChild(containerTwo);
+    yearContainer2.appendChild(containerTwo);
 }
 
 
-// Funcion imprimir datos locaciones:
+//--------------- Funcion imprimir datos locaciones:
 /* Dates
 console.log(jsonArray["colombianCities"][0].country);
 console.log(jsonArray["colombianCities"]); */
@@ -135,15 +136,44 @@ function loadCountries() {
 // Function load cities
 function loadCities() {
 
-    for(let i=0; i<jsonArray["colombianCities"].length; i++) {
-            
-            let city = jsonArray["colombianCities"][i].city;
-    
-            let cityContainer = document.getElementById("cityList");
-            let container = document.createElement("option");
-    
-            container.innerHTML = `<option>${city}</option>`;
-    
-            cityContainer.appendChild(container);
+    for (let i = 0; i < jsonArray["colombianCities"].length; i++) {
+
+        let city = jsonArray["colombianCities"][i].city;
+
+        let cityContainer = document.getElementById("cityList");
+        let container = document.createElement("option");
+
+        container.innerHTML = `<option>${city}</option>`;
+
+        cityContainer.appendChild(container);
     }
+}
+
+
+
+//--------------- Funcion imprimir carros:
+//console.log(jsonArray["cars"]);
+
+function loadCars() {
+
+    let container = "";
+
+    for (const car of jsonArray["cars"]) {
+
+        let carContainer = document.getElementById("carListFind");
+        container = document.createElement("div");
+
+        container.innerHTML = `<div class="card p-2 cardCar">
+        <img src="/simulatorRentalCar/assets/RENTAL CAR/carB.svg" class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title">${car.carMake}</h5>
+            <p class="card-text">Model: ${car.carModel}</p>
+            <p class="card-text">Year: ${car.carModelYear}</p>
+            <a href="#" class="btn btn-primary">Select</a>
+        </div>
+    </div>`;
+
+        carContainer.appendChild(container);
+    }
+
 }
