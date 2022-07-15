@@ -1,3 +1,7 @@
+// Array
+let arrayCars = jsonArray["cars"];
+
+
 
 // Init App
 initApp();
@@ -27,9 +31,57 @@ function loadData() {
 }
 
 
+//---------------------------------------------------------------------------------------------------------------------
+// Classes
+class Cars {
+    constructor (id, carMake, carModel, carModelYear) {
+        this.id = id;
+        this.carMake = carMake;
+        this.carModel = carModel;
+        this.carModelYear = carModelYear;
+    }
+}
+
 
 //---------------------------------------------------------------------------------------------------------------------
 // Scripts
+
+// -------------- Funcion crear nuevo carro
+const btnNewCar = document.getElementById("createNewCar");
+btnNewCar.addEventListener("click", function () {
+    inputNewBranCar.value = '';
+    inputNewCarModel.value = '';
+    inputNewCarYear.value = '';
+
+    createCar();
+})
+
+
+
+function createCar() {
+    // Variables:
+    const inputNewBranCar = document.getElementById("newBrandCar").value;
+    const inputNewCarModel = document.getElementById("newCarModel").value;
+    const inputNewCarYear = document.getElementById("newCarYear").value;
+
+    let newCar = new Cars(getId(),inputNewBranCar, inputNewCarModel, inputNewCarYear);
+
+    arrayCars.push(newCar);
+    loadCars();
+
+}
+
+
+// Get ID
+function getId() {
+    if(arrayCars.length===0) {
+        return 1;
+    } else {
+        const lastCar = arrayCars[arrayCars.length-1];
+        return lastCar.id+1;
+    }
+}
+
 
 //--------------- Funcion imprimir datos calendario:
 /* Dates
@@ -158,7 +210,7 @@ function loadCars() {
 
     let container = "";
 
-    for (const car of jsonArray["cars"]) {
+    for (const car of arrayCars) {
 
         let carContainer = document.getElementById("carListFind");
         container = document.createElement("div");
@@ -169,7 +221,8 @@ function loadCars() {
             <h5 class="card-title">${car.carMake}</h5>
             <p class="card-text">Model: ${car.carModel}</p>
             <p class="card-text">Year: ${car.carModelYear}</p>
-            <a href="#" class="btn btn-primary">Select</a>
+            <a href="#hanging-icons" class="btn btn-primary">Select</a>
+            <a href="#hanging-icons" class="btn btn-danger">Delete</a>
         </div>
     </div>`;
 
@@ -177,3 +230,29 @@ function loadCars() {
     }
 
 }
+
+
+
+// Buscar Pruebas
+function inputSearching() {
+    const inputSearch = document.getElementById("inputSearch").value;
+    findCar(inputSearch);
+}
+// Input
+
+// Btn
+const btnSearch = document.getElementById("btnSearch");
+btnSearch.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    inputSearching();
+});
+
+// Buscar Carro
+function findCar(inputSearch) {
+    let arrayCars = jsonArray["cars"];
+    
+    let carFind = arrayCars.includes(inputSearch);
+
+}
+

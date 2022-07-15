@@ -23,13 +23,27 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
-                    <p>lorem</p>
-
+                    <form>
+                        <div class="mb-3">
+                            <label for="newCarBrand" class="form-label">Brand Car</label>
+                            <input type="text" class="form-control" id="newBrandCar"
+                                aria-describedby="newCarText">
+                        </div>
+                        <div class="mb-3">
+                            <label for="newCarModel" class="form-label">Model Car</label>
+                            <input type="text" class="form-control" id="newCarModel"
+                                aria-describedby="newCarText">
+                        </div>
+                        <div class="mb-3">
+                            <label for="newCarYear" class="form-label">Year Model</label>
+                            <input type="number" class="form-control" id="newCarYear"
+                                aria-describedby="newCarText">
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-warning">Create</button>
+                    <button type="button" class="btn btn-warning" id="createNewCar">Create</button>
                 </div>
             </div>
         </div>
@@ -43,10 +57,10 @@
             </a>
 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-dark" aria-current="page">Home</a></li>
                 <li class="nav-item"><a href="#hanging-icons" class="nav-link text-dark">Book</a></li>
                 <li class="nav-item"><a href="#listFind" class="nav-link text-dark">List and Find Cars</a></li>
-                <li class="nav-item"><a href="" class="nav-link text-dark" data-bs-toggle="modal"
+                <li class="nav-item"><a href="" class="btn btn-outline-warning" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">Create Car</a></li>
             </ul>
         </header>
@@ -177,12 +191,12 @@
     <!--02. List and find car-->
     <div class="container px-4 py-4" id="listFind">
 
-        <nav class="navbar bg-light mb-4">
+        <nav class="navbar mb-4">
             <div class="container-fluid">
                 <h2 class="pb-2 border-bottom">List Cars</h2>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="inputSearch">
+                    <button class="btn btn-success" id="btnSearch">Search</button>
                 </form>
             </div>
         </nav>
