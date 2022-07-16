@@ -210,13 +210,13 @@ btnListCars.addEventListener("click", function() {
 //console.log(jsonArray["cars"]);
 
 function loadCars() {
+    let carContainer = document.getElementById("carListFind");
+    carContainer.innerHTML = "";
 
-    let container = "";
-
-    for (const car of arrayCars) {
+    arrayCars.forEach((car) => {
 
         let carContainer = document.getElementById("carListFind");
-        container = document.createElement("div");
+        let container = document.createElement("div");
 
         container.innerHTML = `<div class="card p-2 cardCar">
         <img src="/simulatorRentalCar/assets/RENTAL CAR/carB.svg" class="card-img-top" alt="">
@@ -229,7 +229,7 @@ function loadCars() {
     </div>`;
         
         carContainer.appendChild(container);
-    }
+    });
 }
 
 
@@ -253,6 +253,7 @@ btnSearch.addEventListener("click", function (event) {
 function findCar(inputSearch) {
     let returnFind = arrayCars.filter(car => car.carMake.toLowerCase() === inputSearch.toLowerCase());
     console.log(returnFind);
+    loadCars();
 }
 
 
