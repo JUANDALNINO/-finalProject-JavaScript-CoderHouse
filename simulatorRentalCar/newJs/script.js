@@ -3,6 +3,7 @@ let arrayCars = jsonArray["cars"];
 
 
 
+
 // Init App
 initApp();
 
@@ -25,9 +26,6 @@ function loadData() {
     loadDatesYear();
     loadCountries();
     loadCities();
-
-    // List Cars
-    loadCars();
 }
 
 
@@ -204,6 +202,11 @@ function loadCities() {
 
 
 //--------------- Funcion imprimir carros:
+const btnListCars = document.getElementById("listCars");
+btnListCars.addEventListener("click", function() {
+    loadCars();
+})
+
 //console.log(jsonArray["cars"]);
 
 function loadCars() {
@@ -221,14 +224,12 @@ function loadCars() {
             <h5 class="card-title">${car.carMake}</h5>
             <p class="card-text">Model: ${car.carModel}</p>
             <p class="card-text">Year: ${car.carModelYear}</p>
-            <a href="#hanging-icons" class="btn btn-primary">Select</a>
-            <a href="#hanging-icons" class="btn btn-danger">Delete</a>
+            <a class="btn btn-primary" id="carSelected">Select</a>
         </div>
     </div>`;
-
+        
         carContainer.appendChild(container);
     }
-
 }
 
 
@@ -250,9 +251,10 @@ btnSearch.addEventListener("click", function (event) {
 
 // Buscar Carro
 function findCar(inputSearch) {
-    let arrayCars = jsonArray["cars"];
-    
-    let carFind = arrayCars.includes(inputSearch);
-
+    let returnFind = arrayCars.filter(car => car.carMake.toLowerCase() === inputSearch.toLowerCase());
+    console.log(returnFind);
 }
 
+
+// Finish book
+const btnSelectcar = document.getElementById("carSelected");
