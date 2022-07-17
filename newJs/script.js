@@ -92,7 +92,7 @@ function loadintro() {
     let intro = document.getElementById("intro");
         intro.innerHTML = `<div class="row flex-lg-row-reverse align-items-center g-5 py-1">
         <div class="col-10 col-sm-8 col-lg-6">
-            <img src="/simulatorRentalCar/assets/back-01.jpg" class="d-block mx-lg-auto img-fluid"
+            <img src="https://res.cloudinary.com/juandacloud/image/upload/v1658032696/js-final-proyect/back-01_uqiwsf.jpg" class="d-block mx-lg-auto img-fluid"
                 alt="Bootstrap Themes" width="700" height="500" loading="lazy">
         </div>
         <div class="col-lg-6">
@@ -479,7 +479,7 @@ function loadCars(listCars) {
         let container = document.createElement("div");
 
         container.innerHTML = `<div class="card p-2 cardCar">
-        <img src="/simulatorRentalCar/assets/RENTAL CAR/carB.svg" class="card-img-top" alt="">
+        <img src="https://res.cloudinary.com/juandacloud/image/upload/v1658024363/js-final-proyect/carB_yavtjq.svg" class="card-img-top" alt="">
         <div class="card-body">
             <h5 class="card-title">${car.carMake}</h5>
             <p class="card-text">Model: ${car.carModel}</p>
