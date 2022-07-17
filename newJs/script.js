@@ -5,36 +5,7 @@ let arrayCalendar = [];
 let arrayBooking = [];
 
 
-// Promise / Fetch
-// Get Cars
-function getApiCars() {
-    fetch("http://localhost:3000/cars")
-    .then(response => response.json()).then(cars => arrayApiCars(cars));
-}
 
-function arrayApiCars(api) {
-    arrayCars = api;
-}
-
-// Get Cities
-function getApiCities() {
-    fetch("http://localhost:3000/colombianCities")
-    .then(response => response.json()).then(cities => arrayApiCities(cities));
-}
-
-function arrayApiCities(api) {
-    arrayCities = api;
-}
-
-// Get Dates
-function getApiDates() {
-    fetch("http://localhost:3000/calendar")
-    .then(response => response.json()).then(dates => arrayApiDates(dates));
-}
-
-function arrayApiDates(api) {
-    arrayCalendar = api;
-}
 
 
 
@@ -112,7 +83,7 @@ function loadintro() {
     // Init Booking
     let initBook = document.getElementById("initBook");
     initBook.addEventListener("click", function() {
-        loadBooking();
+        promiseFunctionBooking(true);
     })
 }
 
@@ -396,7 +367,7 @@ function bookingSteps() {
 
     if(bookObject != undefined) {
         arrayBooking.push(bookObject);// Booking data
-        savingBooking();
+        promiseFunctionLoadCars(true);
     }
 }
 
@@ -545,12 +516,13 @@ function btnReservation() {
     let btnReservation = document.getElementById("reservationBtn");
     btnReservation.addEventListener("click", function() {
         // Load reservation
+
         let actReser = localStorage.getItem("myReservation");
 
         if(!actReser) {
-            alertNotReservation();
+            promiseFunctionReservation(false);
         } else {
-            reservationLoad();
+            promiseFunctionReservation(true);
         }
     })
 }

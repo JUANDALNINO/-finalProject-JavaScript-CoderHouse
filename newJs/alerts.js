@@ -1,10 +1,20 @@
 //Loading Data Alert
-function loadingAlert() {
+function loadingAlertThree() {
   Swal.fire({
-    icon: 'success',
-    title: 'Your work has been saved',
+    icon: 'info',
+    title: 'Loading...',
     showConfirmButton: false,
-    timer: 1500
+    timer: 3000
+  })
+}
+
+// Something error
+function somethingError() {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Something went wrong!',
+    timer: 3000
   })
 }
 
@@ -22,12 +32,11 @@ function alertFirstBook() {
 //Saving Booking:
 function savingBooking() {
     Swal.fire({
-        icon: 'success',
-        title: 'Loading available cars',
+        icon: 'warning',
+        title: 'Saving and loading available cars',
         showConfirmButton: false,
-        timer: 1500
+        timer: 1800
       })
-      loadListCars();
 }
 
 
@@ -72,6 +81,7 @@ function savingCar(saveCar) {
 
 // Load Finish Check
 function loadFinishCheck(arrayBooking) {
+  console.log(arrayBooking)
   Swal.fire(
     'Your reservation:',
     `Your pick up place: ${arrayBooking[0].location.country} ${arrayBooking[0].location.city} <br>
