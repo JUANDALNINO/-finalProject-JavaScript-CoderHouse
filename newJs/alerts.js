@@ -66,7 +66,6 @@ function savingCar(saveCar) {
             'Choose another car',
             'error'
           )
-          console.log(null)
         }
       })
 }

@@ -12,4 +12,3 @@ function reservationLoad() {
     arrayReservationLoad = JSON.parse(loadBookJson);
     loadFinishCheck(arrayReservationLoad);
 }
-

@@ -545,7 +545,7 @@ function btnReservation() {
     let btnReservation = document.getElementById("reservationBtn");
     btnReservation.addEventListener("click", function() {
         // Load reservation
-            let actReser = localStorage.getItem("myReservation");
+        let actReser = localStorage.getItem("myReservation");
 
         if(!actReser) {
             alertNotReservation();
