@@ -1,12 +1,55 @@
 // Array
-let arrayCars = jsonArray["cars"];
+let arrayCars = [];
+let arrayCities = [];
+let arrayCalendar = [];
 let arrayBooking = [];
 
+
+// Promise / Fetch
+// Get Cars
+function getApiCars() {
+    fetch("http://localhost:3001/cars")
+    .then(response => response.json()).then(cars => arrayApiCars(cars));
+}
+
+function arrayApiCars(api) {
+    arrayCars = api;
+}
+
+// Get Cities
+function getApiCities() {
+    fetch("http://localhost:3001/colombianCities")
+    .then(response => response.json()).then(cities => arrayApiCities(cities));
+}
+
+function arrayApiCities(api) {
+    arrayCities = api;
+}
+
+// Get Dates
+function getApiDates() {
+    fetch("http://localhost:3001/calendar")
+    .then(response => response.json()).then(dates => arrayApiDates(dates));
+}
+
+function arrayApiDates(api) {
+    arrayCalendar = api;
+}
 
 
 
 // Init App
 initApp();
+initAPIS();
+
+
+
+// Init apis
+function initAPIS() {
+    getApiCities();
+    getApiDates();
+    getApiCars();
+}
 
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -220,7 +263,7 @@ function loadListCars() {
 
 
 //---------------------------------------------------------------------------------------------------------------------
-// Json and storage
+//Load data
 function loadData() {
     // Booking
     loadDatesDays();
@@ -236,19 +279,13 @@ function loadData() {
 // Scripts
 
 
-//--------------- Funcion imprimir datos calendario:
-/* Dates
-console.log(jsonArray["calendar"][0]["days"]);
-console.log(jsonArray["calendar"][0]["months"]);
-console.log(jsonArray["calendar"][0]["year"]); */
-
 // Function load dates days
 function loadDatesDays() {
 
     let container = "";
     let containerTwo = "";
 
-    for (const day of jsonArray["calendar"][0]["days"]) {
+    for (const day of arrayCalendar[0]["days"]) {
 
         let yearContainer = document.getElementById("pickUpDay");
         container = document.createElement("option");
@@ -273,7 +310,7 @@ function loadDatesMonths() {
     let container = "";
     let containerTwo = "";
 
-    for (const day of jsonArray["calendar"][0]["months"]) {
+    for (const day of arrayCalendar[0]["months"]) {
 
         let yearContainer = document.getElementById("pickUpMonth");
         container = document.createElement("option");
@@ -298,7 +335,7 @@ function loadDatesYear() {
     let container = "";
     let containerTwo = "";
 
-    let year = jsonArray["calendar"][0]["year"];
+    let year = arrayCalendar[0]["year"];
 
     let yearContainer = document.getElementById("pickUpYear");
     container = document.createElement("option");
@@ -317,17 +354,14 @@ function loadDatesYear() {
 
 
 //--------------- Funcion imprimir datos locaciones:
-/* Dates
-console.log(jsonArray["colombianCities"][0].country);
-console.log(jsonArray["colombianCities"]); */
-
+// Dates
 
 // Function load countries
 function loadCountries() {
 
     let container = "";
 
-    let city = jsonArray["colombianCities"][0].country;
+    let city = arrayCities[0].country;
 
     let yearContainer = document.getElementById("countryList");
     container = document.createElement("option");
@@ -341,9 +375,9 @@ function loadCountries() {
 // Function load cities
 function loadCities() {
 
-    for (let i = 0; i < jsonArray["colombianCities"].length; i++) {
+    for (let i = 0; i < arrayCities.length; i++) {
 
-        let city = jsonArray["colombianCities"][i].city;
+        let city = arrayCities[i].city;
 
         let cityContainer = document.getElementById("cityList");
         let container = document.createElement("option");
