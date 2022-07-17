@@ -17,11 +17,6 @@ function initApp() {
     loadInterface();
 }
 
-// Function FinishApp
-function finishApp() {
-    loadInterface();
-    loadFinishCheck();
-}
 
 
 // Load Interface
@@ -43,9 +38,10 @@ function loadHeader() {
                                     <li class="nav-item"><a href="#" class="nav-link text-dark" aria-current="page">Home</a></li>
                                     <li class="nav-item"><a href="#booking" class="nav-link text-dark">Book</a></li>
                                     <li class="nav-item"><a href="#listFind" class="nav-link text-dark">List and Find Cars</a></li>
-                                    <button type="button" class="btn btn-warning">My Reservation</button>
+                                    <button type="button" class="btn btn-warning" id="reservationBtn">My Reservation</button>
                                 </ul>
         </header>`;
+        btnReservation();
 }
 
 //Load Intro:
@@ -222,18 +218,6 @@ function loadListCars() {
     printListcars();
 }
 
-// Load Finish Check
-function loadFinishCheck () {
-    let finishCheck = document.getElementById("finishCheck");
-    finishCheck.innerHTML = `<h1 class="display-5 fw-bold">Finish your check</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-success btn-lg px-4 gap-3">Done</button>
-        <button type="button" class="btn btn-warning btn-lg px-4">My Reservation</button>
-      </div>
-    </div>`
-}
 
 //---------------------------------------------------------------------------------------------------------------------
 // Json and storage
@@ -517,6 +501,22 @@ function selectCar(listCars) {
 
 function carSaved(saveCar) {
     arrayBooking.push(saveCar);
-    console.log(arrayBooking);
-    finishApp();
+    loadFinishCheck(arrayBooking);
+    reservationSave(arrayBooking);
+}
+
+
+// Btn reservation
+function btnReservation() {
+    let btnReservation = document.getElementById("reservationBtn");
+    btnReservation.addEventListener("click", function() {
+        // Load reservation
+            let actReser = localStorage.getItem("myReservation");
+
+        if(!actReser) {
+            alertNotReservation();
+        } else {
+            reservationLoad();
+        }
+    })
 }
